@@ -11,7 +11,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -36,5 +36,5 @@ jobs:
           SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
         run: |
               echo "GITHUB_WORKSPACE === $GITHUB_WORKSPACE" #python deploy_snowpark_apps.py $GITHUB_WORKSPACE
-              echo 'github.workspace === ${{ github.workspace }}'
+              python deploy_snowpark_apps.py $GITHUB_WORKSPACE
         
