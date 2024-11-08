@@ -56,4 +56,7 @@ for (directory_path, directory_names, file_names) in os.walk(root_directory):
         print("Ok")
     else:
         print("no")
+    account = '$SNOWFLAKE_ACCOUNT'
+    print("OK")
+    print(f"account: {account}")
     os.system(f"snow snowpark deploy --replace --temporary-connection --account $SNOWFLAKE_ACCOUNT --user $SNOWFLAKE_USER --role $SNOWFLAKE_ROLE --warehouse $SNOWFLAKE_WAREHOUSE --database $SNOWFLAKE_DATABASE")
