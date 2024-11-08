@@ -12,9 +12,9 @@
 import sys
 from scipy.constants import convert_temperature
 
-def main(temp_f: float) -> float:
-    return convert_temperature(float(temp_f), 'F', 'C')
-    #return convert_temperature(float(temp_f), fr_temp, to_tmp)
+def main(temp_f: float, fr_temp: str, to_tmp : str) -> float:
+    #return convert_temperature(float(temp_f), 'F', 'C')
+    return convert_temperature(float(temp_f), fr_temp, to_tmp)
 
 #original code
 #import sys
