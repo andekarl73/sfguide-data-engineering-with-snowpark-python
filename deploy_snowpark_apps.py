@@ -14,7 +14,7 @@ root_directory = sys.argv[1]
 print(f"Deploying all Snowpark apps in root directory {root_directory}")
 
 # Walk the entire directory structure recursively
-for (directory_path, directory_names, file_names) in os.walk(root_directory):
+'''for (directory_path, directory_names, file_names) in os.walk(root_directory):
     # Get just the last/final folder name in the directory path
     base_name = os.path.basename(directory_path)
 
@@ -49,13 +49,12 @@ for (directory_path, directory_names, file_names) in os.walk(root_directory):
     print(f"folder of function/proc '{directory_path}")
     # Make sure all 6 SNOWFLAKE_ environment variables are set
     # SnowCLI accesses the passowrd directly from the SNOWFLAKE_PASSWORD environmnet variable
-    os.system("pip install snowflake-cli")
     cmd = "snow snowpark build"
     try:
         os.system(cmd)
     except:
         print("Ooops, Major error")
-
+'''
   #  print(f"returned value: os_sys {returned_value}")
 #    os.system('ls')
 #    files = [f for f in os.listdir() if os.path.isfile(f)]
