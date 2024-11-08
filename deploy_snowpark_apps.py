@@ -18,7 +18,7 @@ for (directory_path, directory_names, file_names) in os.walk(root_directory):
     # Get just the last/final folder name in the directory path
     base_name = os.path.basename(directory_path)
 
-'''    # Skip any folders we want to ignore
+    # Skip any folders we want to ignore
     # TODO: Update this logic to skip all subfolders of ignored folder
     if base_name in ignore_folders:
 #        print(f"Skipping ignored folder {directory_path}")
@@ -50,7 +50,7 @@ for (directory_path, directory_names, file_names) in os.walk(root_directory):
     # Make sure all 6 SNOWFLAKE_ environment variables are set
     # SnowCLI accesses the passowrd directly from the SNOWFLAKE_PASSWORD environmnet variable
     cmd = "snow snowpark build"
-    try:
+'''  try:
         os.system(cmd)
     except:
         print("Ooops, Major error")
