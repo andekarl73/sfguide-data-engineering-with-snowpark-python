@@ -50,6 +50,8 @@ for (directory_path, directory_names, file_names) in os.walk(root_directory):
     # SnowCLI accesses the passowrd directly from the SNOWFLAKE_PASSWORD environmnet variable
     os.system(f"snow snowpark build")
     os.listdir()
+    files = [f for f in os.listdir() if os.path.isfile(f)]
+    print(f"Files in directory '{files}")
     if os.path.exists('*.txt'):
         print("Ok")
     else:
