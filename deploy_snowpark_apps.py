@@ -48,15 +48,17 @@ for (directory_path, directory_names, file_names) in os.walk(root_directory):
     print(f"folder of function/proc '{directory_path}")
     # Make sure all 6 SNOWFLAKE_ environment variables are set
     # SnowCLI accesses the passowrd directly from the SNOWFLAKE_PASSWORD environmnet variable
-    os.system('snow snowpark build')
-    os.system('ls')
-    files = [f for f in os.listdir() if os.path.isfile(f)]
-    print(f"Files in directory '{files}")
-    if os.path.exists('*.txt'):
-        print("Ok")
-    else:
-        print("no")
-    account = '$SNOWFLAKE_ACCOUNT'
-    print("OK")
-    print(f"account: {account}")
-    os.system(f"snow snowpark deploy --replace --temporary-connection --account $SNOWFLAKE_ACCOUNT --user $SNOWFLAKE_USER --role $SNOWFLAKE_ROLE --warehouse $SNOWFLAKE_WAREHOUSE --database $SNOWFLAKE_DATABASE")
+    cmd = "snow snowpark build"
+    returned_value = os.system(cmd)
+    print(f"returned value: {returned_value}")
+#    os.system('ls')
+#    files = [f for f in os.listdir() if os.path.isfile(f)]
+#    print(f"Files in directory '{files}")
+#    if os.path.exists('*.txt'):
+#        print("Ok")
+#    else:
+#        print("no")
+#    account = "$SNOWFLAKE_ACCOUNT"
+#    print("OK")
+#    print(f"account: {account}")
+#    os.system(f"snow snowpark deploy --replace --temporary-connection --account $SNOWFLAKE_ACCOUNT --user $SNOWFLAKE_USER --role $SNOWFLAKE_ROLE --warehouse $SNOWFLAKE_WAREHOUSE --database $SNOWFLAKE_DATABASE")
