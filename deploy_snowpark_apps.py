@@ -49,7 +49,9 @@ for (directory_path, directory_names, file_names) in os.walk(root_directory):
     print(f"folder of function/proc '{directory_path}")
     # Make sure all 6 SNOWFLAKE_ environment variables are set
     # SnowCLI accesses the passowrd directly from the SNOWFLAKE_PASSWORD environmnet variable
-    cmd = "snow snowpark build"
+    os.system("snow --version")
+
+    #cmd = "snow snowpark build"
 '''  try:
         os.system(cmd)
     except:
