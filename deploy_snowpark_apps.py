@@ -1,6 +1,7 @@
 import sys
 import os
 import yaml
+import subprocess
 
 ignore_folders = ['.git', '__pycache__', '.ipynb_checkpoints','.snowflake']
 snowflake_project_config_filename = 'snowflake.yml'
@@ -49,8 +50,9 @@ for (directory_path, directory_names, file_names) in os.walk(root_directory):
     # Make sure all 6 SNOWFLAKE_ environment variables are set
     # SnowCLI accesses the passowrd directly from the SNOWFLAKE_PASSWORD environmnet variable
     cmd = "snow snowpark build"
-    returned_value = os.system(cmd)
-    print(f"returned value: {returned_value}")
+  #  returned_value = os.system(cmd)
+  #  print(f"returned value: os_sys {returned_value}")
+    subprocess.run([cmd])
 #    os.system('ls')
 #    files = [f for f in os.listdir() if os.path.isfile(f)]
 #    print(f"Files in directory '{files}")
