@@ -2,7 +2,7 @@ import sys
 import os
 import yaml
 
-ignore_folders = ['.git', '__pycache__', '.ipynb_checkpoints']
+ignore_folders = ['.git', '__pycache__', '.ipynb_checkpoints','.snowflake']
 snowflake_project_config_filename = 'snowflake.yml'
 
 if len(sys.argv) != 2:
