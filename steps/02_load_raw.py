@@ -22,6 +22,19 @@ TABLE_DICT = {
 # SNOWFLAKE ADVANTAGE: Data ingestion with COPY
 # SNOWFLAKE ADVANTAGE: Snowflake Tables (not file-based)
 
+snowflake_connection_parameters = {
+    "account" : "nk26311.west-europe.azure"
+  , "user" : "ANDEKARL"
+  , "password" : "Fbk#No01!_SF"
+  , "role" : "HOL_ROLE"
+  , "warehouse" : "HOL_WH"
+  , "database" : "HOL_DB"
+    #schema = "ANALYTICS"
+}
+
+
+session = Session.builder.configs(snowflake_connection_parameters).create()
+
 def load_raw_table(session, tname=None, s3dir=None, year=None, schema=None):
     session.use_schema(schema)
     if year is None:
@@ -67,9 +80,19 @@ def validate_raw_tables(session):
         print('{}: \n\t{}\n'.format(tname, session.table('RAW_CUSTOMER.{}'.format(tname)).columns))
 
 
+
 # For local debugging
 if __name__ == "__main__":
     # Create a local Snowpark session
-    with Session.builder.getOrCreate() as session:
+  #  with Session.builder.getOrCreate() as session:
+        wh = session.get_current_warehouse()
+
+        print(wh)
+
+        role = session.get_current_role()
+
+        print(role)
+
+
         load_all_raw_tables(session)
 #        validate_raw_tables(session)
