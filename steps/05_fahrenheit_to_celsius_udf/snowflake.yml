@@ -13,7 +13,7 @@ snowpark:
         - name: "temp_f"
           type: "float"
         - name: "fr_temp"
-          type: "str"
+          type: "string"
         - name: "to_temp"
-          type: "str"
+          type: "string"
       returns: float
