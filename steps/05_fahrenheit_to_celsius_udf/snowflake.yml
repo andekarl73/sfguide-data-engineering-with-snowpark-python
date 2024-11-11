@@ -12,4 +12,8 @@ snowpark:
       signature:
         - name: "temp_f"
           type: "float"
+        - name: "fr_temp"
+          type: "str"
+        - name: "to_temp"
+          type: "str"
       returns: float
