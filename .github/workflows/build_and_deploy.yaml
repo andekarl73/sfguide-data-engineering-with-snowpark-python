@@ -24,10 +24,12 @@ jobs:
           python-version: '3.10'
 
       - name: Install Python packages
-        run: pip install -r requirements.txt
+        run: |
+            pip install -r requirements.txt
+            pip install tox
 
-      - name: Test UDF functions
-        run: pytest test/test_fahrenheit_to_celsius_udf.py --snowflake-session local
+      - name: Test code locally
+        run: python -m tox -e py310 -- --snowflake-session local
 
       - name: Deploy Snowpark apps
         env:
