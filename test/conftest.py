@@ -7,7 +7,6 @@ def pytest_addoption(parser):
 
 @pytest.fixture
 def session(request) -> Session:
-    print("Hello")
     if request.config.getoption('--snowflake-session') == 'local':
         return Session.builder.configs({'local_testing': True}).create()
     else:

@@ -27,7 +27,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Test UDF functions
-        run: pytest test/test_fahrenheit_to_celsius_udf.py
+        run: pytest test/test_fahrenheit_to_celsius_udf.py --snowflake-session local
 
       - name: Deploy Snowpark apps
         env:
