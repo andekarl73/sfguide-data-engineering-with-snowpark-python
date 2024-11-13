@@ -26,6 +26,9 @@ jobs:
       - name: Install Python packages
         run: pip install -r requirements.txt
 
+      - name: Test UDF functions
+        run: pytest test/test_fahrenheit_to_celsius_udf.py
+
       - name: Deploy Snowpark apps
         env:
           SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
